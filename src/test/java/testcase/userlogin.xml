@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="注冊|登录|退出系统测试用例" preserve-order="true">
+<suite name="登录|退出系统测试用例" preserve-order="true">
 
 
 
@@ -22,6 +22,17 @@
 			<class name="common.test.LoginOutTest">
 				<methods>
 					<include name="testLoginOut"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="3.账户为空">
+	<parameter name="usernameMsg" value="账号不能为空!"></parameter>
+		<classes>
+			<class name="common.test.LoginOutTest">
+				<methods>
+					<include name="testAssertUsername"></include>
 				</methods>
 			</class>
 		</classes>

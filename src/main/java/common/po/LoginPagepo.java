@@ -1,11 +1,9 @@
 package common.po;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import main.po.BasePage;
-import main.po.InitTest;
 
 /**
  * 
@@ -45,6 +43,12 @@ public class LoginPagepo extends BasePage {
 	/**********************************************退    出******************************************************/
 	@FindBy(xpath = "/html/body/app-root/div/sx-user/mat-card[4]/mat-card-content/div/div")
 	private WebElement loginout_btn;
+	
+	//账户为空
+	@FindBy(css = ".cdk-live-announcer-element.cdk-visually-hidden")
+	private WebElement usernameMsg;
+	public String usernameMsgContent;
+	
 
 	
 
@@ -80,19 +84,23 @@ public class LoginPagepo extends BasePage {
 
 	/**
 	 * 
-	 * @Method:getCurUrl
-	 * @Description:获取当前页面的url
+	 * getUsernameMsgContent
+	 * @Description:清空用户名，点击登录按钮，获得用户名为空的提示信息
 	 *
 	 */
-	public String getCurUrl() {
+	public String getUsernameMsgContent() {
+		login_username.clear();
+		login_button.click();
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		WebDriver driver = InitTest.instance.driver;
-		return driver.getCurrentUrl();
+		usernameMsgContent=usernameMsg.getText();
+		System.out.print("lalalallala");
+		System.out.print(usernameMsgContent);
+		return usernameMsgContent;
 	}
-
+	
 }

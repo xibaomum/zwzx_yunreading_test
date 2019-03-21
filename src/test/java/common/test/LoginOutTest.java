@@ -1,6 +1,7 @@
 package common.test;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -33,5 +34,14 @@ public class LoginOutTest {
 		Reporter.log("验证是否可以退出登录");
 		loginPagepo.loginOut();
 	}
+	
+	// 登录-账户为空
+	@Parameters("usernameMsg")
+		@Test
+		public void testAssertUsername(String usernameMsg) {
+			Reporter.log("验证账户为空是否可以登录");
+			Assert.assertEquals(loginPagepo.getUsernameMsgContent(), usernameMsg);
+			;
+		}
 
 }
