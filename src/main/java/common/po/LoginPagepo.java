@@ -92,6 +92,7 @@ public class LoginPagepo extends BasePage {
 		input_password2.sendKeys(password);
 		register_button.click();
 		register_ok_button.click();
+		System.out.print("register success！！");
 	}
 
 	/**
@@ -103,13 +104,12 @@ public class LoginPagepo extends BasePage {
 	 *
 	 */
 	public void login(String username, String password) {
-		mine_buttton.click();
-		login_register_buttton.click();
 		login_username.clear();
 		login_username.sendKeys(username);
 		login_password.clear();
 		login_password.sendKeys(password);
 		login_button.click();
+		System.out.print("login success！！");
 	}
 
 	/**
@@ -120,6 +120,7 @@ public class LoginPagepo extends BasePage {
 	 */
 	public void loginOut() {
 		loginout_btn.click();
+		System.out.print("logout success！！");
 	}
 
 	/**
