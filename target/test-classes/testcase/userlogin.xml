@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="登录|退出系统测试用例" preserve-order="true">
+
+<test name="1.正常注释">
+		<parameter name="username" value="test546"></parameter>
+		<parameter name="password" value="111111"></parameter>
+		<classes>
+			<class name="common.test.LoginOutTest">
+				<methods>
+					<include name="testRegister"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- <test name="1.正常登录">
+		<parameter name="username" value="testcjing"></parameter>
+		<parameter name="password" value="111111"></parameter>
+		<parameter name="currentUrl" value="http://nqcx-test.w.chineseall.cn/user"></parameter>
+		<classes>
+			<class name="common.test.LoginOutTest">
+				<methods>
+					<include name="testLogin"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+ -->
+	<!-- <test name="2.退出">
+		<classes>
+			<class name="common.test.LoginOutTest">
+				<methods>
+					<include name="testLoginOut"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+
+</suite>
