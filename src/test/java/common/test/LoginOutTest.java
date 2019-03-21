@@ -18,14 +18,7 @@ public class LoginOutTest {
 		loginPagepo = new LoginPagepo();
 	}
 	
-	// 注册操作
-		@Parameters({ "username", "password" })
-		@Test
-		public void testRegister(String username, String password) {
-			Reporter.log("验证注册操作是否正常");
-			loginPagepo.register(username, password);
-		}
-
+	
 	// 登录操作
 	@Parameters({ "username", "password" })
 	@Test
