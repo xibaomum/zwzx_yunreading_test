@@ -132,7 +132,6 @@ public class LoginPagepo extends BasePage {
 			e.printStackTrace();
 		}
 		passwordMsgContent=passwordMsg.getText();
-		System.out.print(passwordMsgContent);
 		return passwordMsgContent;
 	}
 	
@@ -160,8 +159,8 @@ public class LoginPagepo extends BasePage {
 	
 	/**
 	 * 
-	 * getUsernameunable
-	 * @Description:用户名不存在
+	 * getPasswordErr
+	 * @Description:密码错误
 	 *
 	 */
 	public String getPasswordErr(String username, String password) {

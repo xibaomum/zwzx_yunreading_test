@@ -4,13 +4,37 @@
 <suite name="注冊系统测试用例" preserve-order="true">
 
 
-	<test name="1.正常注冊">
-		<parameter name="username" value="test657"></parameter>
+	<!-- <test name="1.正常注冊">
+		<parameter name="account" value="testw"></parameter>
 		<parameter name="password" value="111111"></parameter>
 		<classes>
 			<class name="common.test.RegisterTest">
 				<methods>
 					<include name="testRegister"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+	
+	<test name="2.账户为空">
+		<parameter name="alterMsg" value="账号不能小于1位或者大于12位!"></parameter>
+		<classes>
+			<class name="common.test.RegisterTest">
+				<methods>
+					<include name="testAssertAccountNull"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="3.账户大于12位">
+	    <parameter name="account" value="testtesttestw"></parameter>
+		<parameter name="password" value="111111"></parameter>
+		<parameter name="alterMsg" value="账号不能小于1位或者大于12位!"></parameter>
+		<classes>
+			<class name="common.test.RegisterTest">
+				<methods>
+					<include name="testAssertAccountLong"></include>
 				</methods>
 			</class>
 		</classes>
