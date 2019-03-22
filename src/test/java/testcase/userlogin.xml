@@ -37,5 +37,30 @@
 			</class>
 		</classes>
 	</test>
+	
+	<!-- <test name="4.密碼为空">
+	<parameter name="username" value="testcjing"></parameter>
+	<parameter name="passwordMsg" value="密码不能为空!"></parameter>
+		<classes>
+			<class name="common.test.LoginOutTest">
+				<methods>
+					<include name="testAssertPassword"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="5.用户名不存在">
+	<parameter name="username" value="testabc"></parameter>
+	<parameter name="password" value="111111"></parameter>
+	<parameter name="usernameUableMsg" value="登录名不存在"></parameter>
+		<classes>
+			<class name="common.test.LoginOutTest">
+				<methods>
+					<include name="testAssertUsernameUnable"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> -->
 
 </suite>

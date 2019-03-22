@@ -19,6 +19,8 @@ public class LoginPagepo extends BasePage {
 		super();
 	}
 	
+	
+	
 	/******************************************【我的】按钮******************************************************/
 	@FindBy(xpath = "/html/body/app-root/div/sx-index/div/mat-card[1]/mat-card-content/div[2]/div[5]/div[2]")
 	private WebElement mine_buttton;
@@ -44,12 +46,28 @@ public class LoginPagepo extends BasePage {
 	@FindBy(xpath = "/html/body/app-root/div/sx-user/mat-card[4]/mat-card-content/div/div")
 	private WebElement loginout_btn;
 	
-	//账户为空
-	@FindBy(css = ".cdk-live-announcer-element.cdk-visually-hidden")
+	/**********************************************登录异常******************************************************/
+	//账号不能为空!、登录名不存在、密码错误提示
+	@FindBy(css = ".mat-simple-snackbar.ng-star-inserted")
 	private WebElement usernameMsg;
 	public String usernameMsgContent;
 	
-
+	
+	//密碼为空提示
+	@FindBy(css = ".mat-simple-snackbar.ng-star-inserted")
+	private WebElement passwordMsg;
+	public String passwordMsgContent;
+	
+	//用戶名不存在提示
+	@FindBy(css = ".mat-simple-snackbar.ng-star-inserted")
+	private WebElement usernameUableMsg;
+	public String usernameUnable;
+	
+	//密码错误提示
+	@FindBy(css = ".mat-simple-snackbar.ng-star-inserted")
+	private WebElement passworderrMsg;
+	public String passworderror;
+	
 	
 
 	/**
@@ -91,16 +109,75 @@ public class LoginPagepo extends BasePage {
 	public String getUsernameMsgContent() {
 		login_username.clear();
 		login_button.click();
+		usernameMsgContent=usernameMsg.getText();
+		return usernameMsgContent;
+
+	}
+	
+	/**
+	 * 
+	 *@Method:getPasswordMsgContent
+	 *@Description:获取密码为空的提示信息
+	 *
+	 */	
+	public String getPasswordMsgContent(String username){
+		login_username.clear();
+		login_username.sendKeys(username);
+		login_password.clear();
+		login_button.click();
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		usernameMsgContent=usernameMsg.getText();
-		System.out.print("lalalallala");
-		System.out.print(usernameMsgContent);
-		return usernameMsgContent;
+		passwordMsgContent=passwordMsg.getText();
+		System.out.print(passwordMsgContent);
+		return passwordMsgContent;
+	}
+	
+	/**
+	 * 
+	 * getUsernameunable
+	 * @Description:用户名不存在
+	 *
+	 */
+	public String getUsernameunable(String username, String password) {
+		login_username.clear();
+		login_username.sendKeys(username);
+		login_password.clear();
+		login_password.sendKeys(password);
+		login_button.click();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		usernameUnable=usernameUableMsg.getText();
+		return usernameUnable;
+	}
+	
+	/**
+	 * 
+	 * getUsernameunable
+	 * @Description:用户名不存在
+	 *
+	 */
+	public String getPasswordErr(String username, String password) {
+		login_username.clear();
+		login_username.sendKeys(username);
+		login_password.clear();
+		login_password.sendKeys(password);
+		login_button.click();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		passworderror=passworderrMsg.getText();
+		return passworderror;
 	}
 	
 }

@@ -10,7 +10,6 @@ public class BasePage {
 	
 	public BasePage() {
 		driver=InitTest.instance.driver;
-		System.out.print(driver);
 		PageFactory.initElements(driver,this);
 	}
 	
