@@ -37,11 +37,59 @@ public class RegisterTest extends BasePage {
 	}
 	
 	// 验证注册时账户大于12位提示是否正确
-		@Parameters({ "account", "password","alterMsg" })
-		@Test
-		public void testAssertAccountLong(String account, String password,String alterMsg) {
-			Reporter.log("验证注冊时输入账户大于12位提示是否正确");
-			Assert.assertEquals(registerPo.getaccountislong(account,password), alterMsg);
-		}
+	@Parameters({ "account", "password","alterMsg" })
+	@Test
+	public void testAssertAccountLong(String account, String password,String alterMsg) {
+		Reporter.log("验证注冊时输入账户大于12位提示是否正确");
+		Assert.assertEquals(registerPo.getaccountislong(account,password), alterMsg);
+	}
+		
+	// 验证注册时账户重复提示是否正确
+	@Parameters({ "account", "password","alterMsg" })
+	@Test
+	public void testAssertAccountSame(String account, String password,String alterMsg) {
+		Reporter.log("验证注冊时输入账户重复提示是否正确");
+		Assert.assertEquals(registerPo.getaccountsame(account,password), alterMsg);
+	}
+	
+	// 验证注册时账户存在特殊字符提示是否正确
+	@Parameters({ "account", "password","alterMsg" })
+	@Test
+	public void testAssertAccountSpecial(String account, String password,String alterMsg) {
+		Reporter.log("验证注冊时输入账户存在特殊字符提示是否正确");
+		Assert.assertEquals(registerPo.getaccountspecial(account,password), alterMsg);
+	}
+	
+	// 验证注册时密码为空提示是否正确
+	@Parameters({ "account", "alterMsg" })
+	@Test
+	public void testAssertPsswordNull(String account,String alterMsg) {
+		Reporter.log("验证注冊时输入密码为空提示是否正确");
+		Assert.assertEquals(registerPo.getpasswordnull(account), alterMsg);
+	}
+	
+	// 验证注册时密码小于6位提示是否正确
+	@Parameters({ "account","password", "alterMsg" })
+	@Test
+	public void testAssertPsswordLess(String account,String password,String alterMsg) {
+		Reporter.log("验证注冊时输入密码小于6位提示是否正确");
+		Assert.assertEquals(registerPo.getpasswordless(account, password), alterMsg);
+	}
+		
+	// 验证注册时密码大于16位提示是否正确
+	@Parameters({ "account","password", "alterMsg" })
+	@Test
+	public void testAssertPsswordMore(String account,String password,String alterMsg) {
+		Reporter.log("验证注冊时输入密码大于16位提示是否正确");
+		Assert.assertEquals(registerPo.getpasswordmore(account, password), alterMsg);
+	}
+	
+	// 验证注册时密码不一致提示是否正确
+	@Parameters({ "account","password1","password2", "alterMsg" })
+	@Test
+	public void testAssertPsswordDif(String account,String password1,String password2,String alterMsg) {
+		Reporter.log("验证注冊时输入密码不一致提示是否正确");
+		Assert.assertEquals(registerPo.getpassworddif(account, password1, password2), alterMsg);
+	}
 
 }

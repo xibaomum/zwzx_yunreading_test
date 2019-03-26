@@ -77,7 +77,7 @@ public class RegisterPo extends BasePage {
 	/**
 	 * 
 	 * @Method:getaccountisnull
-	 * @Description:2。账户为空
+	 * @Description:1。账户为空
 	 *
 	 */
 	public String getaccountisnull() {
@@ -97,7 +97,7 @@ public class RegisterPo extends BasePage {
 	/**
 	 * 
 	 * @Method:register
-	 * @Description:3。账户大于12位
+	 * @Description:2。账户大于12位
 	 * @param account-账户
 	 * @param password-密码、确认密码
 	 *
@@ -120,5 +120,162 @@ public class RegisterPo extends BasePage {
 		return accountMsgContent;
 
 	}
+	
+	
+	/**
+	 * 
+	 * @Method:register
+	 * @Description:3。用户名已重复
+	 * @param account-账户
+	 * @param password-密码、确认密码
+	 *
+	 */
+	public String getaccountsame(String account,String password) {
+		useraccount.clear();
+		useraccount.sendKeys(account);
+		input_password1.clear();
+		input_password1.sendKeys(password);
+		input_password2.clear();
+		input_password2.sendKeys(password);
+		register_button.click();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		accountMsgContent = accountMsg.getText();
+		return accountMsgContent;
+
+	}
+	
+	/**
+	 * 
+	 * @Method:register
+	 * @Description:4。账户包含特殊字符
+	 * @param account-账户
+	 * @param password-密码、确认密码
+	 *
+	 */
+	public String getaccountspecial(String account,String password) {
+		useraccount.clear();
+		useraccount.sendKeys(account);
+		input_password1.clear();
+		input_password1.sendKeys(password);
+		input_password2.clear();
+		input_password2.sendKeys(password);
+		register_button.click();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		accountMsgContent = accountMsg.getText();
+		return accountMsgContent;
+
+	}
+	
+	/**
+	 * 
+	 * @Method:register
+	 * @Description:5。密码为空
+	 * @param account-账户
+	 *
+	 */
+	public String getpasswordnull(String account) {
+		useraccount.clear();
+		useraccount.sendKeys(account);
+		input_password1.clear();
+		input_password2.clear();
+		register_button.click();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		accountMsgContent = accountMsg.getText();
+		return accountMsgContent;
+	}
+	
+	/**
+	 * 
+	 * @Method:getpasswordless
+	 * @Description:6。密码小于6位
+	 * @param account-账户
+	 * @param password-密码
+	 *
+	 */
+	public String getpasswordless(String account,String password) {
+		useraccount.clear();
+		useraccount.sendKeys(account);
+		input_password1.clear();
+		input_password1.sendKeys(password);
+		input_password2.clear();
+		input_password2.sendKeys(password);
+		register_button.click();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		accountMsgContent = accountMsg.getText();
+		return accountMsgContent;
+	}
+	
+	/**
+	 * 
+	 * @Method:getpasswordmore
+	 * @Description:7。密码大于16位
+	 * @param account-账户
+	 * @param password-密码
+	 *
+	 */
+	public String getpasswordmore(String account,String password) {
+		useraccount.clear();
+		useraccount.sendKeys(account);
+		input_password1.clear();
+		input_password1.sendKeys(password);
+		input_password2.clear();
+		input_password2.sendKeys(password);
+		register_button.click();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		accountMsgContent = accountMsg.getText();
+		return accountMsgContent;
+	}
+	
+	/**
+	 * 
+	 * @Method:getpasswordmore
+	 * @Description:7。密码大于16位
+	 * @param account-账户
+	 * @param password-密码
+	 *
+	 */
+	public String getpassworddif(String account,String password1,String password2) {
+		useraccount.clear();
+		useraccount.sendKeys(account);
+		input_password1.clear();
+		input_password1.sendKeys(password1);
+		input_password2.clear();
+		input_password2.sendKeys(password2);
+		register_button.click();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		accountMsgContent = accountMsg.getText();
+		return accountMsgContent;
+	}
+
 
 }
