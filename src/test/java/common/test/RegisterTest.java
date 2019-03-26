@@ -91,5 +91,13 @@ public class RegisterTest extends BasePage {
 		Reporter.log("验证注冊时输入密码不一致提示是否正确");
 		Assert.assertEquals(registerPo.getpassworddif(account, password1, password2), alterMsg);
 	}
+	
+	// 验证注册时未勾选法律说明【注册】按钮状态是否正确
+	@Parameters({ "account","password","alterMsg" })
+	@Test
+	public void testAssertButtonGrey(String account,String password,String alterMsg) {
+		Reporter.log("验证注冊时未勾选法律说明【注册】按钮状态是否正确");
+		Assert.assertEquals(registerPo.getbuttongrey(account, password), alterMsg);
+	}
 
 }

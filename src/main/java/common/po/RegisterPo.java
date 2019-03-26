@@ -50,6 +50,11 @@ public class RegisterPo extends BasePage {
 	private WebElement accountMsg;
 	public String accountMsgContent;
 	
+	//法律说明
+	@FindBy(className = "icon-d")
+	private WebElement lawbutton;
+
+	
 
 	/**
 	 * 
@@ -253,10 +258,11 @@ public class RegisterPo extends BasePage {
 	
 	/**
 	 * 
-	 * @Method:getpasswordmore
-	 * @Description:7。密码大于16位
+	 * @Method:getpassworddif
+	 * @Description:8。密码不一致
 	 * @param account-账户
-	 * @param password-密码
+	 * @param password1-密码
+	 * @param password2-确认密码
 	 *
 	 */
 	public String getpassworddif(String account,String password1,String password2) {
@@ -276,6 +282,29 @@ public class RegisterPo extends BasePage {
 		accountMsgContent = accountMsg.getText();
 		return accountMsgContent;
 	}
+	
+	/**
+	 * 
+	 * @Method:getbuttongrey
+	 * @Description:9。未勾选法律说明文字
+	 * @param account-账户
+	 * @param password-密码
+	 *
+	 */
+	public String getbuttongrey(String account,String password) {
+		useraccount.clear();
+		useraccount.sendKeys(account);
+		input_password1.clear();
+		input_password1.sendKeys(password);
+		input_password2.clear();
+		input_password2.sendKeys(password);
+		lawbutton.click();
+		String classname = register_button.getAttribute("className");
+		System.out.print(classname);
+		return classname;
+	}
+	
+	
 
 
 }

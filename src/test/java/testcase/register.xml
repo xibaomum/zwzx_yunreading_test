@@ -120,5 +120,17 @@
 		</classes>
 	</test>
 	
+	<test name="9.未勾选法律说明">
+	    <parameter name="account" value="testcjing"></parameter>
+		<parameter name="password" value="111111"></parameter>
+		<parameter name="alterMsg" value="mat-flat-button loginBtn btn-invalid"></parameter>
+		<classes>
+			<class name="common.test.RegisterTest">
+				<methods>
+					<include name="testAssertButtonGrey"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
 
 </suite>
