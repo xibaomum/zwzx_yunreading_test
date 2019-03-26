@@ -59,21 +59,19 @@ public class RegisterPo extends BasePage {
 	/**
 	 * 
 	 * @Method:register
-	 * @Description:1。正常注册
+	 * @Description:10。正常注册
 	 * @param account-账户
 	 * @param password-密码、确认密码
 	 *
 	 */
 	public void register(String account, String password) {
-		mine_buttton.click();
-		login_register_buttton.click();
-		yn_register_button.click();
 		useraccount.clear();
 		useraccount.sendKeys(account);
 		input_password1.clear();
 		input_password1.sendKeys(password);
 		input_password2.clear();
 		input_password2.sendKeys(password);
+		lawbutton.click();
 		register_button.click();
 		register_ok_button.click();
 		System.out.print("register success！！");
