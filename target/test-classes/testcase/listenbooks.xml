@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="听书测试用例" preserve-order="true">
+	<test name="1.听书列表">
+		<parameter name="currentUrl" value="http://nqcx-test.w.chineseall.cn/audio/play/e9TNj/2563"></parameter>
+		<classes>
+			<class name="Test.Baidu.ListenBooksTest">
+				<methods>
+					<include name="testListenBooks"></include>
+					<include name="testGetCurUrl"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> 
+</suite>
