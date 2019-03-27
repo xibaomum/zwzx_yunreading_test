@@ -25,8 +25,6 @@
 		</classes>
 	</test>
 	
-	
-	
 	 <test name="2.账户大于12位">
 	    <parameter name="account" value="testtesttestw"></parameter>
 		<parameter name="password" value="111111"></parameter>
@@ -39,6 +37,8 @@
 			</class>
 		</classes>
 	</test>
+	
+	
 	
 	<test name="3.账户重复">
 	    <parameter name="account" value="testcjing"></parameter>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="图书测试用例" preserve-order="true">
+	<test name="1.图书列表">
+		<parameter name="currentUrl" value="http://nqcx-test.w.chineseall.cn/book/all"></parameter>
+		<classes>
+			<class name="Test.Baidu.BooksTest">
+				<methods>
+					<include name="testbooklist"></include>
+					<include name="testGetCurUrl"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	
+	<test name="2.图书详情页">
+		<parameter name="currentUrl" value="http://nqcx-test.w.chineseall.cn/book/detail/27P4g/1353270"></parameter>
+		<classes>
+			<class name="Test.Baidu.BooksTest">
+				<methods>
+					<include name="testBookDetail"></include>
+					<include name="testGetCurUrl"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="3.阅读功能">
+		<parameter name="currentUrl" value="http://nqcx-test.w.chineseall.cn/book/read/27P4g/1353270/txt"></parameter>
+		<classes>
+			<class name="Test.Baidu.BooksTest">
+				<methods>					
+					<include name="testReading"></include>
+					<include name="testGetCurUrl"></include>					
+				</methods>			
+			</class>
+		</classes>
+	</test>
+	
+	
+
+</suite>
