@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="名家作者测试用例" preserve-order="true">
+	<test name="1.首页单人作者">
+		<parameter name="currentUrl" value="http://nqcx-test.w.chineseall.cn/book/detail/C9tpg/1002084"></parameter>
+		<classes>
+			<class name="Test.Baidu.MJZZTest">
+				<methods>
+					<include name="testHomepageAuthor"></include>
+					<include name="testGetCurUrl"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	
+	<test name="2.首页【更多】按钮">
+		<parameter name="currentUrl" value="http://nqcx-test.w.chineseall.cn/book/author/1081"></parameter>
+		<classes>
+			<class name="Test.Baidu.MJZZTest">
+				<methods>
+					<include name="testMoreAuthor"></include>
+					<include name="testGetCurUrl"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> 
+</suite>
