@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import po.JPTSPo;
+import po.XSSDPo;
 
 /**
  * 
@@ -17,38 +17,36 @@ import po.JPTSPo;
  * @date:2019年3月28日
  *
  */
-public class JPTSTest {
+public class XSSDTest {
 
-	public JPTSPo jptspo;
+	public XSSDPo xssdpo;
 	WebDriver driver;
 
 	@BeforeClass
 	public void setup() {
-		jptspo = new JPTSPo();
+		xssdpo = new XSSDPo();
 	}
 	
 	
 	
 	
-	// 验证点击首页单本图书-甲方乙方
+	// 验证点击首页单本图书
 	@Parameters()
 	@Test
 	public void testSingleBook() {
 		//清除缓存
-		jptspo.driver.manage().deleteAllCookies();
-		Reporter.log("验证点击首页单本图书-甲方乙方");
-		jptspo.singleBook();
+		xssdpo.driver.manage().deleteAllCookies();
+		Reporter.log("验证点击首页单本图书");
+		xssdpo.singleBook();
 	}
 	
 	
-	// 验证点击首页【更多】按钮-甲方乙方
+	// 验证点击首页【更多】按钮
 		@Parameters()
 		@Test
 		public void testMoreBook() {
-			//清除缓存
-			jptspo.driver.manage().deleteAllCookies();
-			Reporter.log("验证点击首页【更多】按钮-甲方乙方");
-			jptspo.moreBook();
+			Reporter.log("验证点击首页【更多】按钮");
+			xssdpo.moreBook();
 		}
 	
 	
@@ -57,7 +55,7 @@ public class JPTSTest {
 	@Test
 	public void testGetCurUrl(String currentUrl) {
 		Reporter.log("验证是否当前url是否与预期匹配");
-		Assert.assertEquals(jptspo.getCurUrl(), currentUrl);
+		Assert.assertEquals(xssdpo.getCurUrl(), currentUrl);
 	}
 
 	

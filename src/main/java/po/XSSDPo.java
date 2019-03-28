@@ -12,24 +12,20 @@ import main.po.InitTest;
 
 /**
  * 
- *@ClassName:JPTSPo
- *@Description:精品听书
+ *@ClassName:XSSDPo
+ *@Description:新书速递
  *@author:程婧
  *@date:2019年3月28日
  *
  */
-public class JPTSPo extends BasePage{
+public class XSSDPo extends BasePage{
 	
-	public JPTSPo() {
+	public XSSDPo() {
 		super();
 	}
-	   // 首页轮播栏第2栏
-       @FindBy(xpath = "/html/body/app-root/div/sx-index/div/mat-card[4]/mat-card-content/mat-list-item/div/div[3]/div[2]/span[2]")
-       private WebElement turn2;
-	
 		
-	    // 首页-精品听书-单本-甲方乙方
-	    @FindBy(xpath = "/html/body/app-root/div/sx-index/div/mat-card[4]/mat-card-content/mat-list-item/div/div[3]/div[1]/div[7]/ul/li[2]/div/div[2]/div[1]")
+	    // 首页-精品听书-单本
+	    @FindBy(xpath = "//dt[contains(text(),'测试图书2019 小辣 002')]")
 	    private WebElement singlebook;
 		
 		// 【首页】按钮
@@ -37,12 +33,12 @@ public class JPTSPo extends BasePage{
 		private WebElement homepage_button;
 		
 		//【更多】按钮
-		//@FindBy(xpath = "/html/body/app-root/div/sx-index/div/mat-card[4]/mat-card-content/div/i")
-		@FindBy(xpath = "//mat-card[4]/mat-card-content/div/i")
+		//@FindBy(xpath = "/html/body/app-root/div/sx-index/div/mat-card[5]/mat-card-content/div/i")
+		@FindBy(xpath = "//mat-card[5]/mat-card-content/div/i")
 		private WebElement more_button;
 		
-		//首页-更多-甲方乙方
-	    @FindBy(xpath = "//dt[contains(text(),'甲方乙方')]")
+		//首页-更多
+	    @FindBy(xpath = "//dt[contains(text(),'李国文说唐')]")
 		private WebElement more_book;
 		
 		
@@ -55,13 +51,6 @@ public class JPTSPo extends BasePage{
 		 *
 		 */
 		public void singleBook(){
-			turn2.click();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 			singlebook.click();
 		}
 		
@@ -74,9 +63,9 @@ public class JPTSPo extends BasePage{
 		 */
 		public void moreBook(){
 			homepage_button.click();
-            more_button.click();
+			more_button.click();
 			try {
-				Thread.sleep(500);
+				Thread.sleep(1500);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
