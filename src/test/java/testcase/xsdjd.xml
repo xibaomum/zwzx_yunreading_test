@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="新时代经典测试用例" preserve-order="true">
+	<test name="1.首页单本">
+		<parameter name="currentUrl" value="http://nqcx-test.w.chineseall.cn/book/detail/IFg5g/1353173"></parameter>
+		<classes>
+			<class name="Test.Baidu.XSDJDTest">
+				<methods>
+					<include name="testSingleBook"></include>
+					<include name="testGetCurUrl"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	
+	<test name="2.首页【更多】按钮">
+		<parameter name="currentUrl" value="http://nqcx-test.w.chineseall.cn/book/detail/IFg5g/1353173"></parameter>
+		<classes>
+			<class name="Test.Baidu.XSDJDTest">
+				<methods>
+					<include name="testMoreBook"></include>
+					<include name="testGetCurUrl"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> 
+</suite>
