@@ -18,9 +18,9 @@ import main.po.InitTest;
  *@date:2019年3月26日
  *
  */
-public class Listenbookspo extends BasePage{
+public class ListenbooksPo extends BasePage{
 	
-	public Listenbookspo() {
+	public ListenbooksPo() {
 		super();
 	}
 		

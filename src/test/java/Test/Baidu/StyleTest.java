@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import po.ListenbooksPo;
+import po.StylePo;
 
 /**
  * 
@@ -17,22 +17,30 @@ import po.ListenbooksPo;
  * @date:2019年3月27日
  *
  */
-public class ListenBooksTest {
+public class StyleTest {
 
-	public ListenbooksPo listenbookspo;
+	public StylePo stylePo;
 	WebDriver driver;
 
 	@BeforeClass
 	public void setup() {
-		listenbookspo = new ListenbooksPo();
+		stylePo = new StylePo();
 	}
 
-	// 验证听书列表打开操作是否正确
+	// 验证图书tab下分类打开操作是否正确
 	@Parameters()
 	@Test
-	public void testListenBooks() {
-		Reporter.log("验证听书列表打开操作是否正确");
-		listenbookspo.listenbooks();
+	public void testStyleBook() {
+		Reporter.log("验证图书tab下分类打开操作是否正确");
+		stylePo.style_book();
+	}
+	
+	// 验证听书tab下分类打开操作是否正确
+	@Parameters()
+	@Test
+	public void testStyleListen() {
+		Reporter.log("验证听书tab下分类打开操作是否正确");
+		stylePo.style_listen();
 	}
 	
 	//验证当然url
@@ -40,7 +48,7 @@ public class ListenBooksTest {
 	@Test
 	public void testGetCurUrl(String currentUrl) {
 		Reporter.log("验证是否当前url是否与预期匹配");
-		Assert.assertEquals(listenbookspo.getCurUrl(), currentUrl);
+		Assert.assertEquals(stylePo.getCurUrl(), currentUrl);
 	}
 
 	

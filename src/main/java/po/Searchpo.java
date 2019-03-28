@@ -18,9 +18,9 @@ import main.po.InitTest;
  *@date:2019年3月27日
  *
  */
-public class Searchpo extends BasePage{
+public class SearchPo extends BasePage{
 	
-	public Searchpo() {
+	public SearchPo() {
 		super();
 	}
 		

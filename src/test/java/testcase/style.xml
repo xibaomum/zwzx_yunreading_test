@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="分类测试用例" preserve-order="true">
+	<test name="1.图书-文学艺术列表">
+		<parameter name="currentUrl" value="http://nqcx-test.w.chineseall.cn/book/1345"></parameter>
+		<classes>
+			<class name="Test.Baidu.StyleTest">
+				<methods>
+					<include name="testStyleBook"></include>
+					<include name="testGetCurUrl"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="2.听书-文学小说1">
+		<parameter name="currentUrl" value="http://nqcx-test.w.chineseall.cn/audio/9"></parameter>
+		<classes>
+			<class name="Test.Baidu.StyleTest">
+				<methods>
+					<include name="testStyleListen"></include>
+					<include name="testGetCurUrl"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> 
+</suite>

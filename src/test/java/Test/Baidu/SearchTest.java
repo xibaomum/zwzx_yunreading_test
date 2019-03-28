@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import po.Searchpo;
+import po.SearchPo;
 
 /**
  * 
@@ -19,12 +19,12 @@ import po.Searchpo;
  */
 public class SearchTest {
 
-	public Searchpo searchpo;
+	public SearchPo searchpo;
 	WebDriver driver;
 
 	@BeforeClass
 	public void setup() {
-		searchpo = new Searchpo();
+		searchpo = new SearchPo();
 	}
 
 	// 搜索听书-十万个怎么办

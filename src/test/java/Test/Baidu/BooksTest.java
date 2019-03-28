@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import po.Bookspo;
+import po.BooksPo;
 
 /**
  * 
@@ -19,12 +19,12 @@ import po.Bookspo;
  */
 public class BooksTest {
 
-	public Bookspo bookspo;
+	public BooksPo bookspo;
 	WebDriver driver;
 
 	@BeforeClass
 	public void setup() {
-		bookspo = new Bookspo();
+		bookspo = new BooksPo();
 	}
 
 	// 验证图书列表打开操作是否正确
