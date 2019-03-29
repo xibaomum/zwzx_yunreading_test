@@ -106,42 +106,71 @@ public class MJDaZPo extends BasePage {
 	}
 
 	/**
-	 * @Method:singleListen
+	 * @Method:cxts_singleBook
 	 * @Description:点击首页单本听书
 	 * @author:程婧
 	 * @date:2019年3月28日
 	 *
-	 *//*
-	public void singleListen() {
+	 */
+	public void cxts_singleBook() {
 		homepage_button.click();
-		singlelisten.click();
+		cxts_singlebook.click();
 	}
 
-	*//**
+	/**
 	 * @Method:moreListen
 	 * @Description:点击首页听书[更多]按钮
 	 * @author:程婧
 	 * @date:2019年3月28日
 	 *
-	 *//*
-	public String moreListen() {
+	 */
+	public String cxts_moreBook() {
 		homepage_button.click();
-		more_listen_button.click();
-		week.click();
-		month.click();
-		total.click();
-		day.click();
+		morebutton2.click();
 		try {
 			Thread.sleep(500);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		more_listen.click();
+		cxts_morebook.click();
 		title = toptitle.getText();
 		return title;
+	}
+	
+	
+	/**
+	 * @Method:cxts_singleBook
+	 * @Description:点击首页单本听书
+	 * @author:程婧
+	 * @date:2019年3月28日
+	 *
+	 */
+	public void mjzp_singleBook() {
+	    homepage_button.click();
+		mjzp_singlebook.click();
+	}
 
-	}*/
+	/**
+	 * @Method:moreListen
+	 * @Description:点击首页听书[更多]按钮
+	 * @author:程婧
+	 * @date:2019年3月28日
+	 *
+	 */
+	public String mjzp_moreBook() {
+		homepage_button.click();
+		morebutton3.click();
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		mjzp_morebook.click();
+		title = toptitle.getText();
+		return title;
+	}
 
 	/**
 	 * 

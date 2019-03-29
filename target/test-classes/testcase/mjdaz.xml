@@ -24,27 +24,49 @@
 			</class>
 		</classes>
 	</test> 
-	
-	<!-- <test name="3.首页听书单本">
-		<parameter name="currentUrl" value="http://nqcx-test.w.chineseall.cn/audio/detail/33HKj/47"></parameter>
+	<test name="3.首页畅销图书单本">
+		<parameter name="currentUrl" value="http://nqcx-test.w.chineseall.cn/book/detail/ThGUg/1000006"></parameter>
 		<classes>
-			<class name="Test.Baidu.PHBTest">
+			<class name="Test.Baidu.MJDaZTest">
 				<methods>
-					<include name="testSingleListen"></include>
+					<include name="testCXTSSingleBook"></include>
 					<include name="testGetCurUrl"></include>
 				</methods>
 			</class>
 		</classes>
 	</test> 
 	
-	<test name="2.首页听书【更多】按钮">
-		<parameter name="alterMsg" value="听书详情"></parameter>
+	<test name="4.首页畅销图书【更多】按钮">
+		<parameter name="alterMsg" value="图书详情"></parameter>
 		<classes>
-			<class name="Test.Baidu.PHBTest">
+			<class name="Test.Baidu.MJDaZTest">
 				<methods>
-					<include name="testMoreListen"></include>
+					<include name="testCXTSMoreBook"></include>
 				</methods>
 			</class>
 		</classes>
-	</test>  -->
+	</test> 
+	<test name="5.首页畅销图书单本">
+		<parameter name="currentUrl" value="http://nqcx-test.w.chineseall.cn/book/detail/OtuGg/1288525"></parameter>
+		<classes>
+			<class name="Test.Baidu.MJDaZTest">
+				<methods>
+					<include name="testMJZPSingleBook"></include>
+					<include name="testGetCurUrl"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	
+	<test name="6.首页畅销图书【更多】按钮">
+		<parameter name="alterMsg" value="图书详情"></parameter>
+		<classes>
+			<class name="Test.Baidu.MJDaZTest">
+				<methods>
+					<include name="testMJZPMoreBook"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	
 </suite>

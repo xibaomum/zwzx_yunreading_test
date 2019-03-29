@@ -44,29 +44,42 @@ public class MJDaZTest {
 		Reporter.log("验证点击首页【更多】按钮");
 		Assert.assertEquals(mjdazpo.hjwx_moreBook(), alterMsg);
 	}
-	
-	/*// 验证点击首页单本听书
-		@Parameters()
-		@Test
-		public void testSingleListen() {
-			// 清除缓存
-			phbpo.driver.manage().deleteAllCookies();
-			Reporter.log("验证点击首页单本图书");
-			phbpo.singleListen();
-		}
 
-		// 验证点击首页【更多】按钮
-		@Parameters("alterMsg")
-		@Test
-		public void testMoreListen(String alterMsg) {
-			Reporter.log("验证点击首页【更多】按钮");
-			Assert.assertEquals(phbpo.moreListen(), alterMsg);
-		}
-	*/
-	
-	
-	
-	
+	// 验证点击首页单本图书
+	@Parameters()
+	@Test
+	public void testCXTSSingleBook() {
+		// 清除缓存
+		mjdazpo.driver.manage().deleteAllCookies();
+		Reporter.log("验证点击首页单本图书");
+		mjdazpo.cxts_singleBook();
+	}
+
+	// 验证点击首页【更多】按钮
+	@Parameters("alterMsg")
+	@Test
+	public void testCXTSMoreBook(String alterMsg) {
+		Reporter.log("验证点击首页【更多】按钮");
+		Assert.assertEquals(mjdazpo.cxts_moreBook(), alterMsg);
+	}
+
+	// 验证点击首页单本图书
+	@Parameters()
+	@Test
+	public void testMJZPSingleBook() {
+		// 清除缓存
+		mjdazpo.driver.manage().deleteAllCookies();
+		Reporter.log("验证点击首页单本图书");
+		mjdazpo.mjzp_singleBook();
+	}
+
+	// 验证点击首页【更多】按钮
+	@Parameters("alterMsg")
+	@Test
+	public void testMJZPMoreBook(String alterMsg) {
+		Reporter.log("验证点击首页【更多】按钮");
+		Assert.assertEquals(mjdazpo.mjzp_moreBook(), alterMsg);
+	}
 
 	// 验证当然url
 	@Parameters("currentUrl")
