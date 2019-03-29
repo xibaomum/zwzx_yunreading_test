@@ -44,9 +44,6 @@ public class BookmarkPo extends BasePage {
 	private WebElement altmsg;
 	public String msgcontent;
 	
-	
-	
-	
 
 	
 
@@ -96,7 +93,7 @@ public class BookmarkPo extends BasePage {
 	
 	/**
 	 * @Method:unlogin_collect
-	 * @Description:2.未登录状态收藏图书
+	 * @Description:未登录状态收藏图书
 	 * @param
 	 * @author:程婧
 	 * @date:2019年3月29日
