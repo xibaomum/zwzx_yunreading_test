@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+
+	<test name="2.已登录收藏图书" preserve-order="true">
+		<parameter name="username" value="testcjing"></parameter>
+		<parameter name="password" value="111111"></parameter>
+		<parameter name="alterMsg" value="收藏成功!"></parameter>
+		<classes>
+			<class name="common.test.LoginOutTest">
+				<methods>
+					<include name="testLogin"></include>
+				</methods>
+			</class>
+			<class name="Test.Baidu.BookmarkTest">
+				<methods>
+					<include name="testAssertLoginCollect"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="3.已登录取消收藏图书" preserve-order="true">
+		<parameter name="alterMsg" value="取消收藏!"></parameter>
+		<classes>
+			<class name="Test.Baidu.BookmarkTest">
+				<methods>
+					<include name="testAssertLoginUNCollect"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="1.未登录收藏图书">
+		<parameter name="alterMsg" value="登录后才能收藏!"></parameter>
+		<classes>
+			<class name="common.test.LoginOutTest">
+				<methods>
+					<include name="testLoginOut"></include>
+				</methods>
+			</class>
+			<class name="Test.Baidu.BookmarkTest">
+				<methods>
+					<include name="testAssertUNLoginCollect"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite> 

@@ -20,7 +20,7 @@ import po.SearchPo;
 public class SearchTest {
 
 	public SearchPo searchpo;
-	WebDriver driver;
+	public WebDriver driver;
 
 	@BeforeClass
 	public void setup() {
