@@ -28,7 +28,7 @@ public class BookmarkPo extends BasePage {
 	private WebElement bookbutton;
 
 	// 图书列表第一本图书
-	@FindBy(xpath = "//li[1]/div/div[2]/dl/dt")
+	@FindBy(xpath = "//sx-horizontal-book/ul/li[1]/div/div[2]/dl/dt")
 	private WebElement book1;
 
 	// 收藏按钮

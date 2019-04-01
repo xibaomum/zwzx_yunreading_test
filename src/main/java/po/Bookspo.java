@@ -25,33 +25,38 @@ public class BooksPo extends BasePage{
 	}
 		
 	    // 图书按钮
-		@FindBy(xpath = "/html/body/app-root/div/sx-index/div/mat-card[1]/mat-card-content/div[2]/div[1]/div[2]")
+		@FindBy(xpath = "//div[contains(text(),'图书')]")
 		private WebElement bookbutton;
 
-		// 详情页置顶说明
-//		@FindBy(className = "topBarTitle")
-//		private WebElement topmsg;
-//		public String topmessage;
+		// 图书详情标题
+		@FindBy(className = "topBarTitle")
+		private WebElement topmsg;
+		public String topmessage;
 		
-		// 李国文小说自选集
-		@FindBy(xpath = "/html/body/app-root/div/sx-book/pull-load/div/div[1]/sx-horizontal-book/ul/li[4]/div/div[2]/dl/dt")
-		private WebElement bookli;
+		// 图书列表第一本书——本用例适用于李国文小说自选集
+		//or图书列表第一本书必须可读
+		@FindBy(xpath = "//sx-horizontal-book/ul/li[1]/div/div[2]/dl/dt/p")
+		private WebElement bookNo1;
 		
 		//【阅读】按钮
 		@FindBy(className = "readBtn")
 		private WebElement readingButton;
 		
+		//图书列表第一个【快速阅读】按钮
+		@FindBy(className = "//sx-horizontal-book/ul/li[1]/div/div[2]/dl/dt/a")
+		private WebElement quickEeadingButton;
+		
 		
 		/**
 		 *@Method:toplistmsg
-		 *@Description:图书列表置顶信息
+		 *@Description:图书列表url
 		 *@author:程婧
 		 *@date:2019年3月26日
 		 *
 		 */
 		public void booklist(){
 			try {
-				Thread.sleep(3000);
+				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -61,25 +66,27 @@ public class BooksPo extends BasePage{
 		
 		/**
 		 *@Method:bookdetail
-		 *@Description:图书详情
+		 *@Description:图书详情标题
 		 *@author:程婧
 		 *@date:2019年3月27日
 		 *
 		 */
-		public void bookdetail(){
+		public String bookdetail(){
 			try {
-				Thread.sleep(3000);
+				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			//点击图书-李国文小说自选集
-			bookli.click();
+			bookNo1.click();
+			topmessage = topmsg.getText();
+			return topmessage;
 		}
 		
 		/**
 		 *@Method:bookreading
-		 *@Description:阅读功能
+		 *@Description:阅读功能-获取具体图书url
 		 *@author:程婧
 		 *@date:2019年3月27日
 		 *

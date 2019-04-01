@@ -36,11 +36,12 @@ public class BooksTest {
 	}
 	
 	// 验证选择图书，图书详情是否正确
-	@Parameters()
+	@Parameters("alterMsg")
 	@Test
-	public void testBookDetail() {
+	public void testAssertBookDetail(String alterMsg) {
 		Reporter.log("验证选择图书，图书详情是否正确");
-		bookspo.bookdetail();
+		Assert.assertEquals(bookspo.bookdetail(), alterMsg);
+		
 	}
 	
 	//点击【阅读】按钮

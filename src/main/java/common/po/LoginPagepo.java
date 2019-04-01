@@ -70,7 +70,7 @@ public class LoginPagepo extends BasePage {
 		login_password.clear();
 		login_password.sendKeys(password);
 		login_button.click();
-		System.out.print("login success！！");
+
 	}
 
 	/**
@@ -89,7 +89,6 @@ public class LoginPagepo extends BasePage {
 		homebutton.click();
 		mine_buttton.click();
 		loginout_btn.click();
-		System.out.print("logout success！！");
 	}
 
 	/**
@@ -103,6 +102,12 @@ public class LoginPagepo extends BasePage {
 
 		login_username.clear();
 		login_button.click();
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		alterMsgContent = alterMsg.getText();
 		return alterMsgContent;
 
