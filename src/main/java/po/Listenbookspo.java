@@ -39,7 +39,7 @@ public class ListenbooksPo extends BasePage {
 	public String durTimeMSG;
 
 	// 【返回】按钮
-	@FindBy(xpath = "p[contains(text(),'返回')]")
+	@FindBy(xpath = "//p[contains(text(),'返回')]")
 	private WebElement backButton;
 
 	/**

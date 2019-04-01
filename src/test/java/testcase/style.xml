@@ -2,6 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="分类测试用例" preserve-order="true">
+	<listeners>
+		<listener class-name="main.util.RetryListener"></listener>
+		<listener class-name="main.util.TestNGListener"></listener>
+	</listeners>
 	<test name="1.图书-文学艺术列表">
 		<parameter name="currentUrl" value="http://nqcx-test.w.chineseall.cn/book/1345"></parameter>
 		<classes>
@@ -13,7 +17,7 @@
 			</class>
 		</classes>
 	</test>
-	
+
 	<test name="2.听书-文学小说1">
 		<parameter name="currentUrl" value="http://nqcx-test.w.chineseall.cn/audio/9"></parameter>
 		<classes>
@@ -24,5 +28,5 @@
 				</methods>
 			</class>
 		</classes>
-	</test> 
+	</test>
 </suite>

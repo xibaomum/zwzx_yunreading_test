@@ -28,21 +28,23 @@ public class MJZZTest {
 	}
 	
 	
-	// 验证点击首页单人作者下资源是否正确
-	@Parameters()
+	// 验证点击首页单人作者图书详情页
+	@Parameters("alterMsg")
 	@Test
-	public void testHomepageAuthor() {
+	public void testHomepageAuthor(String alterMsg) {
 		Reporter.log("验证听书列表打开操作是否正确");
-		mjzzpo.homepageAuthor();
+		Assert.assertEquals(mjzzpo.homepageAuthor(), alterMsg);
+		
 	}
 	
 	
-	// 验证点击首页【更多】按钮-刘慈欣
-		@Parameters()
+	// 验证点击首页【更多】按钮-名家作者页
+		@Parameters("alterMsg")
 		@Test
-		public void testMoreAuthor() {
-			Reporter.log("验证点击首页【更多】按钮-刘慈欣");
-			mjzzpo.moreAuthor();
+		public void testMoreAuthor(String alterMsg) {
+			Reporter.log(" 验证点击首页【更多】按钮-名家作者页");
+			Assert.assertEquals(mjzzpo.moreAuthor(), alterMsg);
+			
 		}
 	
 	

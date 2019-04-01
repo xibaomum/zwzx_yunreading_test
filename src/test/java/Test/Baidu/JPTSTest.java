@@ -30,25 +30,27 @@ public class JPTSTest {
 	
 	
 	
-	// 验证点击首页单本图书-甲方乙方
-	@Parameters()
+	// 验证点击首页单本图书进入标题
+	@Parameters("alterMsg")
 	@Test
-	public void testSingleBook() {
+	public void testSingleBook(String alterMsg) {
 		//清除缓存
 		jptspo.driver.manage().deleteAllCookies();
-		Reporter.log("验证点击首页单本图书-甲方乙方");
-		jptspo.singleBook();
+		Reporter.log(" 验证点击首页单本图书进入标题");
+		Assert.assertEquals(jptspo.singleBook(), alterMsg);
+		
 	}
 	
 	
-	// 验证点击首页【更多】按钮-甲方乙方
-		@Parameters()
+	// 验证点击首页【更多】按钮列表进入标题
+		@Parameters("alterMsg")
 		@Test
-		public void testMoreBook() {
+		public void testMoreBook(String alterMsg) {
 			//清除缓存
 			jptspo.driver.manage().deleteAllCookies();
-			Reporter.log("验证点击首页【更多】按钮-甲方乙方");
-			jptspo.moreBook();
+			Reporter.log("验证点击首页【更多】按钮列表进入标题");
+			Assert.assertEquals(jptspo.moreBook(), alterMsg);
+			
 		}
 	
 	

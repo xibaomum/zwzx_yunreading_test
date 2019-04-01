@@ -28,21 +28,23 @@ public class XSDJDTest {
 	}
 
 	// 验证点击首页单本图书
-	@Parameters()
+	@Parameters("alterMsg")
 	@Test
-	public void testSingleBook() {
+	public void testSingleBook(String alterMsg) {
 		// 清除缓存
 		xsdjdpo.driver.manage().deleteAllCookies();
 		Reporter.log("验证点击首页单本图书");
-		xsdjdpo.singleBook();
+		Assert.assertEquals(xsdjdpo.singleBook(), alterMsg);
+		
 	}
 
 	// 验证点击首页【更多】按钮
-	@Parameters()
+	@Parameters("alterMsg")
 	@Test
-	public void testMoreBook() {
+	public void testMoreBook(String alterMsg) {
 		Reporter.log("验证点击首页【更多】按钮");
-		xsdjdpo.moreBook();
+		Assert.assertEquals(xsdjdpo.moreBook(), alterMsg);
+		
 	}
 
 	// 验证当然url

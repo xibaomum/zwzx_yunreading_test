@@ -33,6 +33,7 @@ public class ListenBooksTest {
 	public void testListenBooks() {
 		Reporter.log("验证听书列表打开操作是否正确");
 		if(listenbookspo.listenbooks().equals("00:00")){
+			listenbookspo.back();
 			System.out.print("lalalallalal----此资源内容配置不正确------hahahahahha");
 		}else{
 			try {

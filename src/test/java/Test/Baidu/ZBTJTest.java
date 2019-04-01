@@ -29,20 +29,22 @@ public class ZBTJTest {
 	
 	
 	// 验证点击首页-重磅推荐-单本图书
-	@Parameters()
+	@Parameters("alterMsg")
 	@Test
-	public void testSingleBook() {
+	public void testSingleBook(String alterMsg) {
 		Reporter.log("验证点击首页-重磅推荐-单本图书");
-		zbtjpo.singleBook();
+		Assert.assertEquals(zbtjpo.singleBook(), alterMsg);
+		
 	}
 	
 	
 	// 验证点击首页【更多】按钮-流浪地球
-		@Parameters()
+		@Parameters("alterMsg")
 		@Test
-		public void testMoreBook() {
+		public void testMoreBook(String alterMsg) {
 			Reporter.log("验证点击首页【更多】按钮-流浪地球");
-			zbtjpo.moreBook();
+			Assert.assertEquals(zbtjpo.moreBook(), alterMsg);
+			
 		}
 	
 	

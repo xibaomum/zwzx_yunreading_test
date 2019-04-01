@@ -31,22 +31,24 @@ public class XSSDTest {
 	
 	
 	// 验证点击首页单本图书
-	@Parameters()
+	@Parameters("alterMsg")
 	@Test
-	public void testSingleBook() {
+	public void testSingleBook(String alterMsg) {
 		//清除缓存
 		xssdpo.driver.manage().deleteAllCookies();
 		Reporter.log("验证点击首页单本图书");
-		xssdpo.singleBook();
+		Assert.assertEquals(xssdpo.singleBook(), alterMsg);
+		
 	}
 	
 	
 	// 验证点击首页【更多】按钮
-		@Parameters()
+		@Parameters("alterMsg")
 		@Test
-		public void testMoreBook() {
+		public void testMoreBook(String alterMsg) {
 			Reporter.log("验证点击首页【更多】按钮");
-			xssdpo.moreBook();
+			Assert.assertEquals(xssdpo.moreBook(), alterMsg);
+			
 		}
 	
 	

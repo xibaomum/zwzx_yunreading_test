@@ -28,13 +28,13 @@ public class PHBTest {
 	}
 
 	// 验证点击首页单本图书
-	@Parameters()
+	@Parameters("alterMsg")
 	@Test
-	public void testSingleBook() {
+	public void testSingleBook(String alterMsg) {
 		// 清除缓存
 		phbpo.driver.manage().deleteAllCookies();
 		Reporter.log("验证点击首页单本图书");
-		phbpo.singleBook();
+		Assert.assertEquals(phbpo.singleBook(), alterMsg);
 	}
 
 	// 验证点击首页【更多】按钮
@@ -46,13 +46,14 @@ public class PHBTest {
 	}
 	
 	// 验证点击首页单本听书
-		@Parameters()
+		@Parameters("alterMsg")
 		@Test
-		public void testSingleListen() {
+		public void testSingleListen(String alterMsg) {
 			// 清除缓存
 			phbpo.driver.manage().deleteAllCookies();
 			Reporter.log("验证点击首页单本图书");
-			phbpo.singleListen();
+			Assert.assertEquals(phbpo.singleListen(), alterMsg);
+			
 		}
 
 		// 验证点击首页【更多】按钮

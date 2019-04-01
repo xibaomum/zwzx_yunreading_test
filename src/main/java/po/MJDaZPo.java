@@ -25,41 +25,33 @@ public class MJDaZPo extends BasePage {
 	@FindBy(className = "top-bar-homeIcon")
 	private WebElement homepage_button;
 
-	// 首页-名家大作-获奖文学-单本
-	@FindBy(xpath = "//div[contains(text(),'茅盾小说集')]")
+	// 首页-名家大作-获奖文学-第一本
+	@FindBy(xpath = "//mat-card[7]/mat-card-content/div/mat-list-item/div/dl[1]/dd[1]/ul/li[1]/div/div[2]/div[1]")
 	private WebElement hjwx_singlebook;
 
 	// 首页-名家大作-获奖文学-【查看更多】
 	@FindBy(xpath = "//mat-card[7]/mat-card-content/div/mat-list-item/div/dl[1]/dd[2]/div/a")
 	private WebElement morebutton1;
 
-	// 首页-名家大作-获奖文学-查看更多-茅盾小说集
-	@FindBy(xpath = "//dt[contains(text(),'茅盾小说集')]")
-	private WebElement hjwx_morebook;
-
-	// 首页-名家大作-畅销图书-单本
-	@FindBy(xpath = "//div[contains(text(),'孩子不听话')]")
+	// 首页-名家大作-畅销图书-第一本
+	@FindBy(xpath = "//mat-card[7]/mat-card-content/div/mat-list-item/div/dl[2]/dd[1]/ul/li[1]/div/div[2]/div[1]")
 	private WebElement cxts_singlebook;
 
 	// 首页-名家大作-畅销图书-查看更多
 	@FindBy(xpath = "//mat-card[7]/mat-card-content/div/mat-list-item/div/dl[2]/dd[2]/div/a")
 	private WebElement morebutton2;
 
-	// 首页-名家大作-畅销图书-查看更多-孩子不听话怎么办
-	@FindBy(xpath = "//dt[contains(text(),'孩子不听话')]")
-	private WebElement cxts_morebook;
-
-	// 首页-名家大作-名家作品-单本
-	@FindBy(xpath = "//div[contains(text(),'人民的名义')]")
+	// 首页-名家大作-名家作品-第一本
+	@FindBy(xpath = "//mat-card[7]/mat-card-content/div/mat-list-item/div/dl[3]/dd[1]/ul/li[1]/div/div[2]/div[1]")
 	private WebElement mjzp_singlebook;
 
 	// 首页-名家大作-名家作品-查看更多
 	@FindBy(xpath = "//mat-card[7]/mat-card-content/div/mat-list-item/div/dl[3]/dd[2]/div/a")
 	private WebElement morebutton3;
 
-	// 首页-名家大作-名家作品-查看更多-人民的名义
-	@FindBy(xpath = "//dt[contains(text(),'人民的名义')]")
-	private WebElement mjzp_morebook;
+	// 首页-名家大作-获奖文学-查看更多-列表第一本
+	@FindBy(xpath = "//sx-horizontal-book/ul/li[1]/div/div[2]/dl/dt/p")
+	private WebElement morebookNO1;
 
 	// 详情页标题
 	@FindBy(className = "topBarTitle")
@@ -73,7 +65,7 @@ public class MJDaZPo extends BasePage {
 	 * @date:2019年3月28日
 	 *
 	 */
-	public void hjwx_singleBook() {
+	public String hjwx_singleBook() {
 		try {
 			Thread.sleep(500);
 		} catch (InterruptedException e) {
@@ -81,6 +73,8 @@ public class MJDaZPo extends BasePage {
 			e.printStackTrace();
 		}
 		hjwx_singlebook.click();
+		title = toptitle.getText();
+		return title;
 	}
 
 	/**
@@ -99,7 +93,7 @@ public class MJDaZPo extends BasePage {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		hjwx_morebook.click();
+		morebookNO1.click();
 		title = toptitle.getText();
 		return title;
 
@@ -112,9 +106,11 @@ public class MJDaZPo extends BasePage {
 	 * @date:2019年3月28日
 	 *
 	 */
-	public void cxts_singleBook() {
+	public String cxts_singleBook() {
 		homepage_button.click();
 		cxts_singlebook.click();
+		title = toptitle.getText();
+		return title;
 	}
 
 	/**
@@ -133,12 +129,11 @@ public class MJDaZPo extends BasePage {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		cxts_morebook.click();
+		morebookNO1.click();
 		title = toptitle.getText();
 		return title;
 	}
-	
-	
+
 	/**
 	 * @Method:cxts_singleBook
 	 * @Description:点击首页单本听书
@@ -146,9 +141,12 @@ public class MJDaZPo extends BasePage {
 	 * @date:2019年3月28日
 	 *
 	 */
-	public void mjzp_singleBook() {
-	    homepage_button.click();
+	public String mjzp_singleBook() {
+		homepage_button.click();
 		mjzp_singlebook.click();
+		title = toptitle.getText();
+		return title;
+		
 	}
 
 	/**
@@ -167,7 +165,7 @@ public class MJDaZPo extends BasePage {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		mjzp_morebook.click();
+		morebookNO1.click();
 		title = toptitle.getText();
 		return title;
 	}

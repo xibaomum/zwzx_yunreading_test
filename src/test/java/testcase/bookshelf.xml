@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-
+	<listeners>
+		<listener class-name="main.util.RetryListener"></listener>
+		<listener class-name="main.util.TestNGListener"></listener>
+	</listeners>
 
 	<test name="1.已登录-最近浏览-有资源-全选删除" preserve-order="true">
 		<parameter name="username" value="testcjing"></parameter>
@@ -72,7 +75,7 @@
 			</class>
 		</classes>
 	</test>
-	
+
 	<test name="4.已登录-我的收藏-无资源" preserve-order="true">
 		<classes>
 			<class name="common.test.BackToHomepageTest">
@@ -87,7 +90,7 @@
 			</class>
 		</classes>
 	</test>
-	
+
 	<test name="5.未登录-最近浏览_我的收藏" preserve-order="true">
 		<classes>
 			<class name="common.test.LoginOutTest">
@@ -107,9 +110,9 @@
 			</class>
 		</classes>
 	</test>
-	
-	
-	
-	
-	
+
+
+
+
+
 </suite> 

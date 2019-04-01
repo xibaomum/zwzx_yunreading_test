@@ -2,8 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="搜索测试用例" preserve-order="true">
+	<listeners>
+		<listener class-name="main.util.RetryListener"></listener>
+		<listener class-name="main.util.TestNGListener"></listener>
+	</listeners>
 	<test name="1.搜索-十万个怎么办-听书">
-		<parameter name="currentUrl" value="http://nqcx-test.w.chineseall.cn/audio/detail/61kNj/2497"></parameter>
+		<parameter name="currentUrl"
+			value="http://nqcx-test.w.chineseall.cn/audio/detail/61kNj/2497"></parameter>
 		<classes>
 			<class name="Test.Baidu.SearchTest">
 				<methods>
@@ -12,5 +17,5 @@
 				</methods>
 			</class>
 		</classes>
-	</test> 
+	</test>
 </suite>

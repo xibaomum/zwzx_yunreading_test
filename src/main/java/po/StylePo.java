@@ -25,12 +25,12 @@ public class StylePo extends BasePage{
 	}
 		
 	    // 分类按钮
-		@FindBy(xpath = "/html/body/app-root/div/sx-index/div/mat-card[1]/mat-card-content/sx-cmpt-search/div/div/button/span")
+		@FindBy(xpath = "//span[contains(text(),'分类')]")
 		private WebElement button;
 		
-		// 图书-文学艺术
+		// 图书分类第一个
 		@FindBy(xpath = "//*[@id='mat-tab-content-0-0']/div/div/ul/li[1]/div[2]/p[1]")
-		private WebElement ts_wxys;
+		private WebElement tsNO1;
 		
 		// 首页
 		@FindBy(className = "top-bar-homeIcon")
@@ -40,9 +40,9 @@ public class StylePo extends BasePage{
 		@FindBy(xpath = "//*[@id='mat-tab-label-1-1']/div")
 		private WebElement listentab;
 		
-		// 听书-文学小说
+		// 听书分类第一个
 		@FindBy(xpath = "//*[@id='mat-tab-content-1-1']/div/div/ul/li[1]/div[2]/p[1]")
-		private WebElement listen_wxxs;
+		private WebElement listenNO1;
 		
 		
 		
@@ -61,7 +61,7 @@ public class StylePo extends BasePage{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			ts_wxys.click();
+			tsNO1.click();
 			
 		}
 		
@@ -88,7 +88,7 @@ public class StylePo extends BasePage{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			listen_wxxs.click();
+			listenNO1.click();
 			
 		}
 

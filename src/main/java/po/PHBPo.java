@@ -29,7 +29,7 @@ public class PHBPo extends BasePage{
 	    private WebElement singlebook;
 	    
 	    // 首页-排行榜-听书-单本
-	    @FindBy(xpath = "//div[contains(text(),'北京不向北')]")
+	    @FindBy(xpath = "//mat-list-item[2]/div/div[3]/ul/li[1]/div/div[2]/div[1]")
 	    private WebElement singlelisten;
 		
 		// 【首页】按钮
@@ -40,16 +40,16 @@ public class PHBPo extends BasePage{
 		@FindBy(xpath = "//mat-card[6]/mat-card-content/div/div[2]/i")
 		private WebElement more_book_button;
 		
-		//更多-图书
-	    @FindBy(xpath = "//dt[contains(text(),'流浪地球')]")
+		//更多-图书列表第一
+	    @FindBy(xpath = "//sx-horizontal-book/ul/li[1]/div[2]/div[2]/dl/dt/p")
 		private WebElement more_book;
 		
 		//听书【更多】按钮
 		@FindBy(xpath = "//mat-card[6]/mat-card-content/div/div[3]/i")
 		private WebElement more_listen_button;
 		
-		//更多-听书
-	    @FindBy(xpath = "//dt[contains(text(),'怪诞故事')]")
+		//更多-听书列表第一
+	    @FindBy(xpath = "//sx-horizontal-audio/ul/li[1]/div[2]/div[2]/dl/dt")
 		private WebElement more_listen;
 		
 		//日榜
@@ -82,8 +82,16 @@ public class PHBPo extends BasePage{
 		 *@date:2019年3月28日
 		 *
 		 */
-		public void singleBook(){
+		public String singleBook(){
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			singlebook.click();
+			title = toptitle.getText();
+			return title;
 		}
 		
 		/**
@@ -96,6 +104,12 @@ public class PHBPo extends BasePage{
 		public String moreBook(){
 			homepage_button.click();
 			more_book_button.click();
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			week.click();
 			month.click();
 			total.click();
@@ -119,9 +133,17 @@ public class PHBPo extends BasePage{
 		 *@date:2019年3月28日
 		 *
 		 */
-		public void singleListen(){
+		public String singleListen(){
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			homepage_button.click();
 			singlelisten.click();
+			title = toptitle.getText();
+			return title;
 		}
 		
 		/**
@@ -134,6 +156,12 @@ public class PHBPo extends BasePage{
 		public String moreListen(){
 			homepage_button.click();
 			more_listen_button.click();
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			week.click();
 			month.click();
 			total.click();

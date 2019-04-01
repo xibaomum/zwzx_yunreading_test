@@ -28,13 +28,14 @@ public class MJDaZTest {
 	}
 
 	// 验证点击首页单本图书
-	@Parameters()
+	@Parameters("alterMsg")
 	@Test
-	public void testHJWXSingleBook() {
+	public void testHJWXSingleBook(String alterMsg) {
 		// 清除缓存
 		mjdazpo.driver.manage().deleteAllCookies();
 		Reporter.log("验证点击首页单本图书");
-		mjdazpo.hjwx_singleBook();
+		Assert.assertEquals(mjdazpo.hjwx_singleBook(), alterMsg);
+		
 	}
 
 	// 验证点击首页【更多】按钮
@@ -46,13 +47,14 @@ public class MJDaZTest {
 	}
 
 	// 验证点击首页单本图书
-	@Parameters()
+	@Parameters("alterMsg")
 	@Test
-	public void testCXTSSingleBook() {
+	public void testCXTSSingleBook(String alterMsg) {
 		// 清除缓存
 		mjdazpo.driver.manage().deleteAllCookies();
 		Reporter.log("验证点击首页单本图书");
-		mjdazpo.cxts_singleBook();
+		Assert.assertEquals(mjdazpo.cxts_singleBook(), alterMsg);
+		
 	}
 
 	// 验证点击首页【更多】按钮
@@ -64,13 +66,14 @@ public class MJDaZTest {
 	}
 
 	// 验证点击首页单本图书
-	@Parameters()
+	@Parameters("alterMsg")
 	@Test
-	public void testMJZPSingleBook() {
+	public void testMJZPSingleBook(String alterMsg) {
 		// 清除缓存
 		mjdazpo.driver.manage().deleteAllCookies();
 		Reporter.log("验证点击首页单本图书");
-		mjdazpo.mjzp_singleBook();
+		Assert.assertEquals(mjdazpo.mjzp_singleBook(), alterMsg);
+		
 	}
 
 	// 验证点击首页【更多】按钮

@@ -49,6 +49,7 @@ public class StyleTest {
 	public void testGetCurUrl(String currentUrl) {
 		Reporter.log("验证是否当前url是否与预期匹配");
 		Assert.assertEquals(stylePo.getCurUrl(), currentUrl);
+
 	}
 
 	
