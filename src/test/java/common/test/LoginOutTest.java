@@ -19,7 +19,7 @@ public class LoginOutTest {
 		loginPagepo = new LoginPagepo();
 	}
 
-	// 登录操作
+	// 1.正常登录
 	@Parameters({ "username", "password" })
 	@Test
 	public void testLogin(String username, String password) {
@@ -27,43 +27,43 @@ public class LoginOutTest {
 		loginPagepo.login(username, password);
 	}
 
-	// 退出登录
+	// 2.退出登录
 	@Test
 	public void testLoginOut() {
 		Reporter.log("验证是否可以退出登录");
 		loginPagepo.loginOut();
 	}
 
-	// 登录-账户为空
-	@Parameters("usernameMsg")
+	// 3.账户为空
+	@Parameters("alterMsg")
 	@Test
-	public void testAssertUsername(String usernameMsg) {
+	public void testAssertUsername(String alterMsg) {
 		Reporter.log("验证账户为空是否可以登录");
-		Assert.assertEquals(loginPagepo.getUsernameMsgContent(), usernameMsg);
+		Assert.assertEquals(loginPagepo.getUsernameMsgContent(), alterMsg);
 
 	}
 
-	// 验证登录时密码为空提示是否正确
-	@Parameters({ "username", "passwordMsg" })
+	// 4.密码为空
+	@Parameters({ "username", "alterMsg" })
 	@Test
-	public void testAssertPassword(String username, String passwordMsg) {
+	public void testAssertPassword(String username, String alterMsg) {
 		Reporter.log("验证登录时密码为空提示是否正确");
-		Assert.assertEquals(loginPagepo.getPasswordMsgContent(username), passwordMsg);
+		Assert.assertEquals(loginPagepo.getPasswordMsgContent(username), alterMsg);
 	}
 
-	// 验证登录时用户名不存在提示是否正确
-	@Parameters({ "username", "password", "usernameUableMsg" })
+	// 5.用户名不存在
+	@Parameters({ "username", "password", "alterMsg" })
 	@Test
-	public void testAssertUsernameUnable(String username, String password, String usernameUableMsg) {
+	public void testAssertUsernameUnable(String username, String password, String alterMsg) {
 		Reporter.log("验证登录时用户名不存在提示是否正确");
-		Assert.assertEquals(loginPagepo.getUsernameunable(username, password), usernameUableMsg);
+		Assert.assertEquals(loginPagepo.getUsernameunable(username, password), alterMsg);
 	}
 
-	// 验证登录时密码错误提示是否正确
-		@Parameters({ "username", "password", "passworderrMsg" })
-		@Test
-		public void testAssertPasswordErr(String username, String password, String passworderrMsg) {
-			Reporter.log("验证登录时用户名不存在提示是否正确");
-			Assert.assertEquals(loginPagepo.getPasswordErr(username, password), passworderrMsg);
-		}
+	// 6.密码错误
+	@Parameters({ "username", "password", "alterMsg" })
+	@Test
+	public void testAssertPasswordErr(String username, String password, String alterMsg) {
+		Reporter.log("验证登录时用户名不存在提示是否正确");
+		Assert.assertEquals(loginPagepo.getPasswordErr(username, password), alterMsg);
+	}
 }

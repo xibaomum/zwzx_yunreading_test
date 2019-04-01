@@ -66,6 +66,12 @@ public class BookmarkPo extends BasePage {
 		bookbutton.click();
 		book1.click();
 		collectbutton.click();
+		try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		msgcontent = altmsg.getText();
 		return msgcontent;
 	}
