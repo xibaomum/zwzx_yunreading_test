@@ -3,6 +3,7 @@ package common.test;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -98,6 +99,13 @@ public class RegisterTest extends BasePage {
 	public void testRegister(String account, String password) {
 		Reporter.log("验证注册操作是否正常");
 		registerPo.register(account, password);
+	}
+	
+	@AfterSuite
+	public void closed() {
+		// 关闭浏览器
+		System.out.println("关闭浏览器成功");
+		registerPo.driver.close();
 	}
 
 }

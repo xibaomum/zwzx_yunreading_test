@@ -124,7 +124,7 @@
 	</test>
 
 	<test name="10.正常注冊">
-		<parameter name="account" value="testrwdf"></parameter>
+		<parameter name="account" value="testerwef"></parameter>
 		<parameter name="password" value="111111"></parameter>
 		<classes>
 			<class name="common.test.RegisterTest">
