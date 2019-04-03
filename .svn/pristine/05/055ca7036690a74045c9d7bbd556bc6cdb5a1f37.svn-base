@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="注冊系统测试用例" preserve-order="true">
+	<listeners>
+		<listener class-name="main.util.RetryListener"></listener>
+		<listener class-name="main.util.TestNGListener"></listener>
+	</listeners>
+	<test name="1.账户为空">
+		<parameter name="alterMsg" value="账号不能小于1位或者大于12位!"></parameter>
+		<classes>
+			<class name="common.test.RegisterTest">
+				<methods>
+					<include name="testAssertAccountNull"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="2.密码为空">
+		<parameter name="account" value="testuiu"></parameter>
+		<parameter name="alterMsg" value="密码不能为空!"></parameter>
+		<classes>
+			<class name="common.test.RegisterTest">
+				<methods>
+					<include name="testAssertPsswordNull"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="3.账户大于12位">
+		<parameter name="account" value="testtesttestw"></parameter>
+		<parameter name="password" value="111111"></parameter>
+		<parameter name="alterMsg" value="账号不能小于1位或者大于12位!"></parameter>
+		<classes>
+			<class name="common.test.RegisterTest">
+				<methods>
+					<include name="testAssertAccountLong"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+	<test name="4.账户重复">
+		<parameter name="account" value="testcjing"></parameter>
+		<parameter name="password" value="111111"></parameter>
+		<parameter name="alterMsg" value="用户名已存在"></parameter>
+		<classes>
+			<class name="common.test.RegisterTest">
+				<methods>
+					<include name="testAssertAccountSame"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="5.账户包含特殊字符">
+		<parameter name="account" value="！@#￥"></parameter>
+		<parameter name="password" value="111111"></parameter>
+		<parameter name="alterMsg" value="账号仅限汉字、字母、数字、下划线、中划线!"></parameter>
+		<classes>
+			<class name="common.test.RegisterTest">
+				<methods>
+					<include name="testAssertAccountSpecial"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="6.密码小于6位">
+		<parameter name="account" value="testuiu"></parameter>
+		<parameter name="password" value="11111"></parameter>
+		<parameter name="alterMsg" value="密码不能小于6位或者大于16位!"></parameter>
+		<classes>
+			<class name="common.test.RegisterTest">
+				<methods>
+					<include name="testAssertPsswordLess"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="7.密码大于16位">
+		<parameter name="account" value="testuiu"></parameter>
+		<parameter name="password" value="11112222333344445"></parameter>
+		<parameter name="alterMsg" value="密码不能小于6位或者大于16位!"></parameter>
+		<classes>
+			<class name="common.test.RegisterTest">
+				<methods>
+					<include name="testAssertPsswordMore"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="8.密码不一致">
+		<parameter name="account" value="testuiu"></parameter>
+		<parameter name="password1" value="111111"></parameter>
+		<parameter name="password2" value="111112"></parameter>
+		<parameter name="alterMsg" value="两次密码不一致!"></parameter>
+		<classes>
+			<class name="common.test.RegisterTest">
+				<methods>
+					<include name="testAssertPsswordDif"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="9.未勾选法律说明">
+		<parameter name="account" value="testcjing"></parameter>
+		<parameter name="password" value="111111"></parameter>
+		<parameter name="alterMsg" value="mat-flat-button loginBtn btn-invalid"></parameter>
+		<classes>
+			<class name="common.test.RegisterTest">
+				<methods>
+					<include name="testAssertButtonGrey"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="10.正常注冊">
+		<parameter name="account" value="testerwef"></parameter>
+		<parameter name="password" value="111111"></parameter>
+		<classes>
+			<class name="common.test.RegisterTest">
+				<methods>
+					<include name="testRegister"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

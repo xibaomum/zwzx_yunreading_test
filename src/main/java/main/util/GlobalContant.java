@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
  */
 public  class GlobalContant {
 	
-	public final static String BROWSER="Chrome";
+	public final static String BROWSER="chrome";
 
 	public final static String BASEURL="http://www.baidu.com";
 	public final static String BASEURL2="http://nqcx-test.w.chineseall.cn/index";

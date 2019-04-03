@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener class-name="main.util.RetryListener"></listener>
+		<listener class-name="main.util.TestNGListener"></listener>
+	</listeners>
+
+	<test name="1.已登录-最近浏览-有资源-全选删除" preserve-order="true">
+		<parameter name="username" value="testcjing"></parameter>
+		<parameter name="password" value="111111"></parameter>
+		<parameter name="alterMsg" value="删除成功!"></parameter>
+		<classes>
+			<class name="common.test.LoginOutTest">
+				<methods>
+					<include name="testLogin"></include>
+				</methods>
+			</class>
+			<class name="common.test.BackToHomepageTest">
+				<methods>
+					<include name="testback"></include>
+				</methods>
+			</class>
+			<class name="Test.Baidu.SearchTest">
+				<methods>
+					<include name="testSearchBooks"></include>
+				</methods>
+			</class>
+			<class name="common.test.BackToHomepageTest">
+				<methods>
+					<include name="testback"></include>
+				</methods>
+			</class>
+			<class name="Test.Baidu.BookshelfTest">
+				<methods>
+					<include name="testAssertLogin_WDLL_Res"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="2.已登录-最近浏览-无资源" preserve-order="true">
+		<classes>
+			<class name="common.test.BackToHomepageTest">
+				<methods>
+					<include name="testback"></include>
+				</methods>
+			</class>
+			<class name="Test.Baidu.BookshelfTest">
+				<methods>
+					<include name="testAssertLogin_WDLL_nullRes"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="3.已登录-我的收藏-有资源-全选删除" preserve-order="true">
+		<parameter name="alterMsg" value="收藏成功!"></parameter>
+		<parameter name="alterMsg2" value="删除收藏成功!"></parameter>
+		<classes>
+			<class name="Test.Baidu.BookmarkTest">
+				<methods>
+					<include name="testAssertLoginCollect"></include>
+				</methods>
+			</class>
+			<class name="common.test.BackToHomepageTest">
+				<methods>
+					<include name="testback"></include>
+				</methods>
+			</class>
+			<class name="Test.Baidu.BookshelfTest">
+				<methods>
+					<include name="testAssertLogin_WDSC_Res"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="4.已登录-我的收藏-无资源" preserve-order="true">
+		<classes>
+			<class name="common.test.BackToHomepageTest">
+				<methods>
+					<include name="testback"></include>
+				</methods>
+			</class>
+			<class name="Test.Baidu.BookshelfTest">
+				<methods>
+					<include name="testAssertLogin_WDSC_nullRes"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="5.未登录-最近浏览_我的收藏" preserve-order="true">
+		<classes>
+			<class name="common.test.LoginOutTest">
+				<methods>
+					<include name="testLoginOut"></include>
+				</methods>
+			</class>
+			<class name="common.test.BackToHomepageTest">
+				<methods>
+					<include name="testback"></include>
+				</methods>
+			</class>
+			<class name="Test.Baidu.BookshelfTest">
+				<methods>
+					<include name="testAssertUnlogin"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+
+
+</suite> 

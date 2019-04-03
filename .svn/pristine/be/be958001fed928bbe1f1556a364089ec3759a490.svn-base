@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="名家大作测试用例" preserve-order="true">
+	<listeners>
+		<listener class-name="main.util.RetryListener"></listener>
+		<listener class-name="main.util.TestNGListener"></listener>
+	</listeners>
+	<test name="1.首页获奖文学单本">
+		<parameter name="alterMsg" value="图书详情"></parameter>
+		<classes>
+			<class name="Test.Baidu.MJDaZTest">
+				<methods>
+					<include name="testHJWXSingleBook"></include>
+					<!-- <include name="testGetCurUrl"></include> -->
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="2.首页获奖文学【更多】按钮">
+		<parameter name="alterMsg" value="图书详情"></parameter>
+		<classes>
+			<class name="Test.Baidu.MJDaZTest">
+				<methods>
+					<include name="testHJWXMoreBook"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="3.首页畅销图书单本">
+		<parameter name="alterMsg" value="图书详情"></parameter>
+		<classes>
+			<class name="Test.Baidu.MJDaZTest">
+				<methods>
+					<include name="testCXTSSingleBook"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="4.首页畅销图书【更多】按钮">
+		<parameter name="alterMsg" value="图书详情"></parameter>
+		<classes>
+			<class name="Test.Baidu.MJDaZTest">
+				<methods>
+					<include name="testCXTSMoreBook"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="5.首页畅销图书单本">
+		<parameter name="alterMsg" value="图书详情"></parameter>
+		<classes>
+			<class name="Test.Baidu.MJDaZTest">
+				<methods>
+					<include name="testMJZPSingleBook"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="6.首页畅销图书【更多】按钮">
+		<parameter name="alterMsg" value="图书详情"></parameter>
+		<classes>
+			<class name="Test.Baidu.MJDaZTest">
+				<methods>
+					<include name="testMJZPMoreBook"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>
