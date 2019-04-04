@@ -102,7 +102,7 @@
 				<configuration>
 					<suiteXmlFiles>
 						<!-- 通过 ${RunTest} 来获取Jenkins的构建参数 -->
-						<suiteXmlFile>login.xml</suiteXmlFile>
+						<suiteXmlFile>${testSuite}</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

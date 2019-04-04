@@ -87,9 +87,9 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
-					<compilerArguments>
+					<!-- <compilerArguments>
 						<extdirs>${project.basedir}/src/main/webapp/WEB-INF/lib</extdirs>
-					</compilerArguments>
+					</compilerArguments> -->
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
@@ -102,7 +102,7 @@
 				<configuration>
 					<suiteXmlFiles>
 						<!-- 通过 ${RunTest} 来获取Jenkins的构建参数 -->
-						<suiteXmlFile>${xmlFileName}</suiteXmlFile>
+						<suiteXmlFile>login.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
